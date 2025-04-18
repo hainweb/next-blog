@@ -1,9 +1,10 @@
-
+import Head from 'next/head'
 import db from '../../lib/dbConnect'
 import collections from '../../lib/collections'
 import { ObjectId } from 'mongodb'
 import Layout from '../../components/layout/Layout'
 import { withSessionSsr } from '../../lib/sessions'
+
 
 export const getServerSideProps = withSessionSsr(async (content) => {
     await db.connect()
@@ -39,8 +40,6 @@ export const getServerSideProps = withSessionSsr(async (content) => {
     }
 
 
-
-
 })
 
 
@@ -48,29 +47,41 @@ const blog = ({ sesUser, user, blog }) => {
 
     return (
         <div>
+            <Head>
+                <title>{blog.title} | Chikku Blog</title>
+                <meta name="description" content={blog.content.slice(0, 150)} />
+                <meta property="og:title" content={blog.title} />
+                <meta property="og:description" content={blog.content.slice(0, 150)} />
+                <meta property="og:type" content="article" />
+                <meta property="og:url" content={`https://your-domain.com/blog/${blog._id}`} />
+                <meta property="og:image" content="https://your-domain.com/default-image.jpg" />
+
+                <meta name="google-site-verification" content="MSQCeZYAsLEx_Upa9FKWbPSG0hAkhFfUA31Y3QN3SUk" />
+            </Head>
+
             <Layout user={sesUser}>
-            <div className="p-4 md:p-18 bg-gray-100 ">
-            <div className="border-t border-l border-r border-gray-300 rounded-t-xl max-w-[300px] bg-white">
+                <div className="p-4 md:p-18 bg-gray-100 ">
+                    <div className="border-t border-l border-r border-gray-300 rounded-t-xl max-w-[300px] bg-white">
 
-            <h2 className=" font-semibold text-gray-800  ml-5">{user.Name}</h2>
-            <p className="text-xs text-gray-500 mb-1 ml-5">{user.Mobile}</p>
-            </div>
-            <div
+                        <h2 className=" font-semibold text-gray-800  ml-5">{user.Name}</h2>
+                        <p className="text-xs text-gray-500 mb-1 ml-5">{user.Mobile}</p>
+                    </div>
+                    <div
 
-                    className="relative bg-white rounded-xl shadow-sm border border-gray-200 p-3 text-sm hover:shadow-md transition"
-                >
+                        className="relative bg-white rounded-xl shadow-sm border border-gray-200 p-3 text-sm hover:shadow-md transition"
+                    >
 
 
-                    {/* Blog Content */}
-                    <h2 className="font-semibold text-gray-800 ">{blog.title}</h2>
-                    <p className="text-xs text-gray-500 mb-1 ">{blog.author}</p>
-                    <p className="text-gray-600 ">{blog.content}</p>
-                    <div className="text-xs text-blue-500 mt-2">{blog.tag}</div>
-                </div>
+                        {/* Blog Content */}
+                        <h2 className="font-semibold text-gray-800 ">{blog.title}</h2>
+                        <p className="text-xs text-gray-500 mb-1 ">{blog.author}</p>
+                        <p className="text-gray-600 ">{blog.content}</p>
+                        <div className="text-xs text-blue-500 mt-2">{blog.tag}</div>
+                    </div>
                 </div>
             </Layout>
         </div>
-        
+
     )
 }
 

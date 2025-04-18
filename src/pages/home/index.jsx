@@ -9,6 +9,9 @@ const blog = ({ blogs }) => {
     const safeBlogs = blogs || []; // ensure it's always an array
 
     return (
+
+        
+        
         <div className='p-5 min-h-screen bg-gray-100'>
 
             <div className='w-full flex justify-center'>
