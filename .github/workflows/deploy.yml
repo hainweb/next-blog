@@ -24,9 +24,6 @@ jobs:
       - name: Build Next.js App
         run: npm run build
 
-      - name: Export Static Files (optional for static export)
-        run: npm run export
-
       # Example: Deploy to Vercel, Netlify, or custom server
       # Here's a placeholder - update based on your hosting
       # Or integrate Vercel automatically with GitHub
