@@ -53,7 +53,7 @@ const blog = ({ sesUser, user, blog }) => {
             <div className="border-t border-l border-r border-gray-300 rounded-t-xl max-w-[300px] bg-white">
 
             <h2 className=" font-semibold text-gray-800  ml-5">{user.Name}</h2>
-            <p className="text-xs text-gray-500 mb-1  ml-5">{user.Mobile}</p>
+            <p className="text-xs text-gray-500 mb-1 ml-5">{user.Mobile}</p>
             </div>
             <div
 
@@ -64,7 +64,7 @@ const blog = ({ sesUser, user, blog }) => {
                     {/* Blog Content */}
                     <h2 className="font-semibold text-gray-800 ">{blog.title}</h2>
                     <p className="text-xs text-gray-500 mb-1 ">{blog.author}</p>
-                    <p className="text-gray-600 line-clamp-2">{blog.content}</p>
+                    <p className="text-gray-600 ">{blog.content}</p>
                     <div className="text-xs text-blue-500 mt-2">{blog.tag}</div>
                 </div>
                 </div>
