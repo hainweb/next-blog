@@ -3,7 +3,7 @@ name: Deploy Next.js App
 on:
   push:
     branches:
-      - main  # or 'master' or whichever branch you use for deployment
+      - master  # or 'master' or whichever branch you use for deployment
 
 jobs:
   build-and-deploy:
