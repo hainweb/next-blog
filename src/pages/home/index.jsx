@@ -6,6 +6,8 @@ import React from 'react'
 
 const blog = ({ blogs }) => {
 
+    const safeBlogs = blogs || []; // ensure it's always an array
+
     return (
         <div className='p-5 min-h-screen bg-gray-100'>
 
@@ -18,9 +20,9 @@ const blog = ({ blogs }) => {
             </div>
 
             <div className="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 p-5 sm:p-8 md:p-18 bg-gray-100 ">
-                {blogs.length >= 1 ?
+                {safeBlogs.length >= 1 ?
                     <>
-                        {blogs.map((subBlog) => (
+                        {safeBlogs.map((subBlog) => (
                             subBlog.blogs.map((item) => (
 
                                 <Link href={`blog/${item._id}`} key={item._id}>

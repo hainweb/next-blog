@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Layout from '../../components/layout/Layout'
 import db from '../../lib/dbConnect'
-import collections from '../../lib/Collections'
+import collections from '../../lib/collections'
 import { withSessionSsr } from '../../lib/sessions'
 import axios from 'axios'
 import Link from 'next/link'

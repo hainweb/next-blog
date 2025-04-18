@@ -1,5 +1,5 @@
 import db from '../../../lib/dbConnect'
-import collections from '../../../lib/Collections'
+import collections from '../../../lib/collections'
 import { ObjectId } from 'mongodb';
 export default async function addBlog(req, res) {
 

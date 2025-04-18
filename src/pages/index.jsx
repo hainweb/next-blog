@@ -1,8 +1,8 @@
 import db from '../lib/dbConnect'
-import collections from "../lib/Collections";
+import collections from "../lib/collections";
 import Layout from "../components/layout/Layout";
 import Blog from "./home"
-import { withSessionSsr } from "@/lib/sessions";
+import { withSessionSsr } from "../lib/sessions";
 
 
 export const getServerSideProps = withSessionSsr(async ({ req }) => {

@@ -1,6 +1,6 @@
 
 import db from '../../lib/dbConnect'
-import collections from '../../lib/Collections'
+import collections from '../../lib/collections'
 import { ObjectId } from 'mongodb'
 import Layout from '../../components/layout/Layout'
 import { withSessionSsr } from '../../lib/sessions'
